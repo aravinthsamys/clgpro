@@ -1,0 +1,194 @@
+{% extends 'indexauth/layouts/main.html' %}
+{% load static %}
+<!-- title -->
+{% block title %}
+TERA | HOME
+{% endblock title %}
+
+
+<!-- body -->
+{% block content %}
+    
+<!-- navbar -->
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light navbarown">
+    <div class="container-fluid">
+
+        <!-- logo -->
+        <!-- <a class="navbar-brand" href="#">
+            <img src="person.jpg" alt="Logo" style="width:40px;height: 40px;" class="rounded-pill">
+          </a> -->
+
+      <a class="navbar-bran" href="#">
+        <span class="logo1">TERA</span>
+        <span class="logo2">MEDIA</span>
+      </a>
+
+       <!-- login -->
+    <div class="logindiv justify-content-center">
+        <a class="btn btn-outline-success loginown" type="submit" href="{% url 'login_page' %}">LOGIN</a>
+        <a class="btn btn-outline-success loginown" type="submit" href="{% url 'register' %}">REGISTER</a>
+    </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars menubr"></span>
+      </button>
+      
+    <!-- navlist -->
+      <div class="collapse navbar-collapse justify-content-center " id="navbarNav">
+        <ul class="navbar-nav m-3">
+          <li class="nav-item">
+            <a class="nav-link text-white active" aria-current="page" href="#">HOME</a>
+          </li>
+          <li class="nav-item px-4">
+            <a class="nav-link text-white" href="#services">SERVICES</a>
+          </li>
+          <li class="nav-item px-4">
+            <a class="nav-link  text-white " href="#aboutus">ABOUT US</a>
+          </li>
+          <li class="nav-item px-4">
+            <a class="nav-link  text-white " href="#contact" >CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div style="height: 45px;"></div>
+  <p></p>
+
+  <!-- carousel -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://ipera.ai/wp-content/uploads/2023/06/Newsletter-Gorseller-6.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.paymentscardsandmobile.com/wp-content/uploads/2024/05/tips-and-strategies.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://hiretechtalent.com/wp-content/themes/hiretechtalent/assets/images/employer/efficient_recruiting.svg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span id="services" class="visually-hidden"></span>
+    </button>
+  </div>
+
+  <!-- services -->
+
+  <div class="container-fluid" >
+    <h3 class="text-center m-5 alert-primary">OUR SERVICES</h3>
+    <p class="mx-5">Welcome to TeraMedia site, where we specialize in delivering exceptional Business Related services designed to meet your unique needs.Our Teramedia service is tailored to provide you with benefits and features. Whether you're looking for services, our team of experts is here to help you achieve your goals. Explore our comprehensive range of services below:</p>
+   
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-4 p-5">
+          <div class="" style="border-radius: 10px; outline: 1px solid grey; outline-offset: 10px;">
+            <img class="m-3 serimg" src="data:image/png;base64,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"  alt="images of person">
+          <div class="p-3 text-center">
+            <h3>Business<br/>Promotion</h3>
+            <p>Hear from our satisfied clients <br/>who have <br>experienced the promotional services. </p>
+          
+          </div>
+        </div>
+        </div>
+        
+        <div class="col-sm-4 p-5">
+          <div class="" style="border-radius: 10px; outline: 1px solid grey; outline-offset: 10px;">
+            <img class="m-3 serimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2WXBccGzBWxaY1HNJ8PTbpw6qSG-daXd2_A&s"  alt="images of person">
+          <div class="p-3 text-center">
+            <h3>Job<br/>Promotion</h3>
+            <p>We stay ahead of industry trends and leverage the latest technologies to deliver innovative and effective services.</p>
+          
+          </div>
+        </div>
+        </div>
+        <div class="col-sm-4 p-5">
+          <div class="" style="border-radius: 10px; outline: 1px solid grey; outline-offset: 10px;">
+            <img class="m-3 serimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnqSYfCrvZklJIbh0T7T5rg1tZAD4gXjwL5A&s"  alt="images of person">
+          <div class="p-3 text-center">
+            <h3>Hiring<br/> process</h3>
+            <p id="aboutus">We prioritize your needs and work closely with you to provide personalized solutions that align with your objectives.</p>
+          
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- about us -->
+
+  <div class="container-fluid"   style="background-color: rgb(178, 120, 231);">
+    <div class="container my-4">
+      <div class="row">
+        <div class="col-sm-6 p-3">
+          <h3 class="px-5 my-5 font-weight-bold">ABOUT US</h3>
+          <p class="p-3 text-white">
+            At TeraMedia, we believe in Idealogy supports future. Since our founding in 2024, we've been dedicated to providing exceptional services that benefit to customers.
+            TeraMediaa was established By Aravinthsamy Sankar with the vision of Easy use. What started as the humble beginnings has grown into Local Areas. Our journey is a testament to significant milestones, growth, and achievements in Business Promotion and soon in all Possible Areas...
+            <span id="contact"> .</span></p>
+        </div>
+        <div class="col-sm-6" >
+ <img class="aboutimg" src="{% static 'images/about.png' %}" alt="" style="width:90%; height: 300px;">
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <!-- contact us -->
+
+  <div class="container my-3" >
+   <h2 class="p-3 text-center">CONTACT</h2>
+    <div class="">
+
+      <form method="post">
+        <div class="mb-3">{% csrf_token %}
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" name="from_email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Message</label>
+          <textarea style="resize: none;" class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="mb-3 form-check">
+         
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+  </div>    
+ 
+
+  <div class="container-fluid footown" style="background-color: grey;margin-top: 5%;">
+<div class="container">
+  <div class="">
+  
+  <div class="mx-xl-4" style="padding-top: 15px;">
+    <p>Phone : 9999999999</p>
+    <p>E-mail : teramediainfo@gmail.com</p>
+    <p>Get in Touch</p>
+    <p>Ready to experience the Teramediaa difference? <br> Contact us today to learn more about <br> our services and how we can help you achieve your goals.</p>  </div>
+  
+  </div>
+</div>
+
+  </div>
+{% endblock content %}

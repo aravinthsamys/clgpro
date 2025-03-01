@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERA | Register</title>
+    <!-- link of bootstrap -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/tlogo.jpg' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+<style>
+    body{
+      background-image: url("{% static 'images/5492382.jpg' %}");
+        background-repeat:no-repeat ;
+    }
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+/* :root{
+  --black-color:#fff;
+} */
+
+.wrapper {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  height:100vh;
+  width:100%;
+  background-size:cover;
+  background-position:center;
+
+}
+.login-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  margin-left: 35%;
+  background: transparent;
+  border-radius: 15% 0% 0% 20%;
+  border: 2px solid rgba(98, 0, 143, 0.89);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  backdrop-filter: blur(5px);
+}
+
+h2 {
+  font-size:2em;
+  color:black;
+  text-align:center;
+}
+.input-box {
+  position:relative;
+  width:310px;
+  margin:25px 0;
+  border-bottom:1px solid blue;
+}
+.input-box label {
+  position:absolute;
+  top:50%;
+  left:5px;
+  transform:translateY(-50%);
+  font-size:0.9em;
+  color:blue;
+  pointer-events:none;
+  transition:.5s;
+}
+.input-box input:focus  ~ label,
+.input-box input:valid  ~ label {
+  top:-5px;
+}
+.input-box input {
+  width:100%;
+  height:35px;
+  background:transparent;
+  border:none;
+  outline:none;
+  font-size:1em;
+  color:black;
+  padding:0 35px 0 5px;
+}
+
+.remember-forgot label input {
+  margin-right:3px;
+}
+
+button {
+  width:100%;
+  height:40px;
+  background-color:#099e16;
+  border-radius:40px;
+  cursor:pointer;
+  font-size:1em;
+  color:#ffffff;
+  font-weight:500;
+  border: none;
+}
+
+button:hover{
+ background-color: #06550c;
+}
+.register-link {
+  font-size:.9em;
+  color:var(--black-color);
+  text-align:center;
+  margin:25px 0 10px;
+}
+.register-link p a {
+  color:var(--black-color);
+  text-decoration:none;
+  font-weight:600;
+}
+.register-link p a:hover {
+  text-decoration:underline;
+}
+.googlelogin{
+  color: rgb(89, 60, 167);
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.googlelogin:hover{
+  text-decoration-line: none;
+}
+
+
+@media (max-width:500px) {
+  .login-box {
+    width:100%;
+    height:85vh;
+    margin-left: 5%;
+    border-radius: 20% 0% 0% 25%;
+  }
+  .input-box {
+    width:290px;
+  }
+  .topic{
+    width: auto;
+  }
+  .side-img{
+    display: none;
+  }
+}
+h1,h3,h4,h5{
+ position:relative;
+ bottom: 10px;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light navbarown">
+        <div class="container-fluid topic">
+          <a class="navbar-bran" href="#">
+            <span class="logo1">TERA</span>
+            <span class="logo2">MEDIA</span>
+          </a>
+        </div>  </nav>
+<div style="height: 15px;"></div>
+
+       <!-- login page -->
+
+       <div class="wrapper">
+
+        <div class="login-box">
+          <form action="" method="post"> {% csrf_token %}
+            <p></p>
+            <h2>Register</h2>
+
+            <div class="input-box">
+              <!-- <span class="icon">
+                <ion-icon name="mail"></ion-icon>
+              </span> -->
+              <input type="text" name="username" id="username" required>
+              <label>Username</label>
+            </div>
+            {% if form.errors.username %}
+            <h1 style="color: red;margin-left: 20px;font-size: 15px;">{{ form.errors.username }}</h1>
+            {% endif %}
+            <div class="input-box">
+                <!-- <span class="icon">
+                  <ion-icon name="mail"></ion-icon>
+                </span> -->
+                <input type="email" name="email" id="email" required>
+                <label>Email</label>
+              </div>
+              {% if form.errors.email %}
+              <h3 style="color: red;margin-left: 20px;font-size: 15px;">{{ form.errors.email }}</h3>
+              {% endif %}
+
+            <div class="input-box">
+              <!-- <span class="icon">
+                <ion-icon name="lock-closed"></ion-icon>
+              </span> -->
+              <input type="password" name="password1" id="password1"  class="fakePassword" required>
+              <label>Password</label>
+              <span style="position: absolute;bottom: 7px;left:270px"><i id="toggler"class="far fa-eye"></i></span>
+
+            </div>
+            {% if form.errors.password1 %}
+            <h4 style="color: red;margin-left: 20px;font-size: 15px;">{{ form.errors.password1 }}</h4>
+            {% endif %}
+
+            <div class="input-box">
+                <!-- <span class="icon">
+                  <ion-icon name="lock-closed"></ion-icon>
+                </span> -->
+                <input type="password" name="password2" id="password2"  class="fakePassworde" required>
+                <label>Confirm Password</label>
+                <span style="position: absolute;bottom: 5px;left:270px"><i id="togglere"class="far fa-eye"></i></span>
+
+              </div>
+              {% if form.errors.password2 %}
+            <h5 style="color: red;margin-left: 20px;font-size: 15px;">{{ form.errors.password2 }}</h5>
+            {% endif %}
+
+
+
+            <button type="submit">Signup</button>
+
+            <div class="register-link">
+                <p class="text-dark">If already have an account? <a class="text-info" href="{% url 'login_page' %}">Login</a></p>
+
+              <a class="googlelogin" href="{% url 'social:begin' 'google-oauth2' %}"> <img src="{% static 'images/google.png' %}" width="25px" height="29px" alt=""> &nbsp;Login With Google</a>
+            </div>
+          </form>
+
+          <div class="side-img"><img src="{% static 'images/sideimg.png' %}" alt="" width="350px" height="520px" style="margin-left: 40px;"></div>
+
+        </div>
+
+      </div>
+      <script>
+        var password = document.querySelector('.fakePassword');
+      var toggler = document.querySelector('#toggler');
+      showHidePassword = () => {
+      if (password.type == 'password') {
+      password.setAttribute('type', 'text');
+      toggler.classList.add('fa-eye-slash');
+      } else {
+      toggler.classList.remove('fa-eye-slash');
+      password.setAttribute('type', 'password');
+      }
+      };
+      toggler.addEventListener('click', showHidePassword);
+      
+      var passworde = document.querySelector('.fakePassworde');
+      var togglere = document.querySelector('#togglere');
+      showHidePassworde = () => {
+      if (passworde.type == 'password') {
+      passworde.setAttribute('type', 'text');
+      togglere.classList.add('fa-eye-slash');
+      } else {
+      togglere.classList.remove('fa-eye-slash');
+      passworde.setAttribute('type', 'password');
+      }
+      };
+      togglere.addEventListener('click', showHidePassworde);
+      </script>
+</body>
+</html>

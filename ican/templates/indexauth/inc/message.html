@@ -1,0 +1,8 @@
+{% for msg in messages %}
+<div  class="alert alert-info alert-dismissible fade show  container-fluid" role="alert" style="font-size: 15px;position: absolute;width: 98%;top: 50px;right: 1%;z-index: 7;">
+   <p style="visibility: hidden;"></p> <i class="fa-solid fa-circle-exclamation"></i> &nbsp; {{msg}}
+    <button style="width:20px;background-color:transparent;color:black;margin-right: 30px;float: right;" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
+        <i  style="font-size: large;position: relative;top: -10px;float: left;" class="fa-solid fa-xmark"></i>
+    </button>
+</div>
+{% endfor %}

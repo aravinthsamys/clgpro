@@ -1,0 +1,9 @@
+{% for msg in messages %}
+<div  class="alert alert-info alert-dismissible fade show mx-xl-2 py-3 container-fluid" role="alert" style="position: absolute;width: 35%;top: 70px;right: 2%;z-index: 7;">
+   <i class="fa-solid fa-circle-exclamation"></i> &nbsp; {{msg}}
+    <button style="outline: none;border: none;background-color: transparent;float: right;" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
+        <a style="color: black;" href="">
+        <i  style="font-size: large;position: relative;" class="fa-solid fa-xmark"></i></a>
+    </button>
+</div>
+{% endfor %}
